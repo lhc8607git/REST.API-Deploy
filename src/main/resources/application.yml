@@ -1,0 +1,28 @@
+server:
+  port: 8088 # 포트 변경
+
+logging:
+  level:
+    org.springframework: DEBUG
+
+spring:
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+  messages:
+    basename: messages
+  security:
+    user:
+      name: username       # SecurityConfig.java 에  아이디,비번 설정을 해줘서 이제 적용 안됨.
+      password: passw0rd
+
+# 모니터링
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
