@@ -1,6 +1,12 @@
+# language : 언어(플랫폼) 선택
 language: java
 
-jdk: oraclejdk8
+# sudo : 관리자 권한 갖기
+sudo: required
+
+# sevices : 도커 환경 구성하기
+services:
+  -docker
 
 branches:
   only:
@@ -8,21 +14,32 @@ branches:
 
 
 # Travis CI 서버의 Home
-# 2
-cache:
-  directories:
-    - '$HOME/.m2'
+#cache:
+#  directories:
+#    - '$HOME/.m2'
 
+# before_install : 스크립트 실행할 수 있는 환경 구성
 before_install:
   - chmod +x mvnw
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - echo "before_install-----------start creating an image with dockerfile"
+# (참고) https://eojin312.github.io/%EA%B0%9C%EC%9D%B8%EA%B3%B5%EB%B6%80/travis/
+# (참고) https://brainbackdoor.tistory.com/17
+
+# script : 테스트 실행할 스크립트
+script:
+  - echo "scrip-----------sstart creating an image with dockerfile"
+
+# after_success : 테스트 성공 후 할일
+after_success:
+  - echo "after_success---------Test success"
 
 # 3
-script: "./mvnw clean package"
+#script: "./mvnw clean package"
 
 # CI 실행 완료시 메일로 알람
 # 4
-notifications:
-  email:
-    recipients:
-      - akvs75@naver.com
-
+#notifications:
+#  email:
+#    recipients:
+#      - akvs75@naver.com
