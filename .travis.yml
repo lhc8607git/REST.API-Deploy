@@ -1,15 +1,6 @@
 language: java
 
-sudo: required
-
-services:
-  -docker
+jdk: oraclejdk8
 
 before_install:
-  - echo "before_install-----------start creating an image with dockerfile"
-
-script:
-  - echo "scrip-----------sstart creating an image with dockerfile"
-
-after_success:
-  - echo "after_success---------Test success"
+  - chmod +x mvnw
