@@ -13,7 +13,8 @@ EXPOSE 8088
 
 # ARG 명령어는 build 시에 사용되는 변수
 # 'target/*.jar 이라는 값을 가진 JAR_FILE 변수를 사용하겠다'라는 것
-ARG JAR_FILE=restful-web-service-0.0.1-SNAPSHOT.jar
+# ARG JAR_FILE=restful-web-service-0.0.1-SNAPSHOT.jar   <-- 연습용
+ARG JAR_FILE=target/*.jar
 
 # 첫번째에 있는 걸, 두번째 있는 곳으로 
 # 압축파일이면 압축을 해제한 상태로 파일을 복사합니다

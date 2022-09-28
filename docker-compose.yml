@@ -1,0 +1,59 @@
+version: '3'
+services:
+  spring-boot:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8088:8088"
+    volumes:
+      - .:/app
+
+
+# 키워드 종류 (일부만) ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+# build
+# 를 사용하게 된다면 image 항목을 사용하지 않아도 도커 컴포즈가 실행됩니다.
+# context: .   <-  빌드 명령을 실행할 디렉터리 경로
+# dockerfile: Dockerfile.dev      <- 도커 이미지를 빌드하는데 사용할 도커 파일 위치
+
+
+# volume
+# volume설정은 :가 없이 쓰면 제외대상이고 :가 포함된것은 매핑정보입니다.
+# docker run으로 db 컨테이너를 실행할 때 -v 옵션을 사용하여 
+# 데이터베이스 컨테이너의 데이터를 로컬 컴퓨터에 저장했던 것과 같다. 
+# docker-compose.yml의 volumes에는 상대 경로를 지정할 수 있어서 편리하다.
+# 예)
+# 마운트 할 볼륨입니다. 이 부분은 docker로 생성할 때 지정했던 부분과 거의 일치 합니다.
+# 상대경로로 입력도 가능합니다. ex) ./:/app
+#    volumes:
+#     - C:/Users/admin/Desktop/volume/log:/volume
+
+
+# container_name
+# container name 을 set 한다. 이 값을 set 하지 않으면 Docker Compose 가 만들어서 set 한다. 
+# services 이름이 보통 container 들끼리의 통신에서 DNS name 으로 쓰인다. (예를 들어 아래 같은 경우 redis) 그런데 여기에 container_name 이 더해지면, redis 와 myredis 둘다 사용할 수 있다.
+# 예)
+# services:
+#     redis:
+#         image: redis
+#         container_name: myredis
+
+
+# image: mysql:8.0.28
+# 서비스의 컨테이너를 생성할 때 쓰일 이미지의 이름을 설정합니다.
+
+
+# ports
+# docker run 명령어의 -p와 같으며 서비스의 컨테이너를 개방할 포트를 설정합니다. 
+
+
+#    environment:
+#      - MYSQL_DATABASE=database
+#      - MYSQL_ROOT_PASSWORD=abcd1234
+#      - TZ=Asia/Seoul
+# docker run 명령어의 --env, -e 옵션과 동일합니다. 
+# 서비스의 컨테이너 내부에서 사용할 환경변수를 지정하며, 딕셔너리(Dictionary)나 배열 형태로 사용할 수 있습니다.
+
+
+
