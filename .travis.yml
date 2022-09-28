@@ -15,7 +15,6 @@ cache:
 
 before_install:
   - chmod +x mvnw
-  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 # 3
 script: "./mvnw clean package"
