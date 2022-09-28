@@ -6,5 +6,16 @@ branches:
   only:
     - master
 
+
+# Travis CI 서버의 Home
+# 2
+cache:
+  directories:
+    - '$HOME/.m2'
+
 before_install:
   - chmod +x mvnw
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+# 3
+script: "./mvnw clean package"
