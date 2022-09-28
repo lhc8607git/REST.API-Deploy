@@ -19,3 +19,10 @@ before_install:
 
 # 3
 script: "./mvnw clean package"
+
+# CI 실행 완료시 메일로 알람
+# 4
+notifications:
+  email:
+    recipients:
+      - akvs75@naver.com
