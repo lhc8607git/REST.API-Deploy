@@ -47,7 +47,7 @@ script:
 # 마지막에 점(.)은 Dockerfile의 위치를 경로를 지정한다.
 # (저장을 원하지 않을 경우 로그인시 -p대신 --password-stdin 옵션을 이용)
 after_success:
-  - docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
   - echo "after_success■■■■■■■■■■■Test success"
 
 
