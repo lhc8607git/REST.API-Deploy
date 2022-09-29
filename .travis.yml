@@ -13,6 +13,7 @@ branches:
   only:
     - master
 
+# 메이븐을 통해 의존성을 받게 되면 이를 해당 디렉토리에 캐시하여, 같은 의존성은 다음 배포 때부터 다시 받지 않도록 설정합니다.
 # Travis CI 서버의 Home
 #cache:
 #  directories:
@@ -30,15 +31,37 @@ before_install:
 script:
   - ./mvnw test -B
   - echo "scrip■■■■■■■■■■■sstart creating an image with dockerfile"
+#script: "./mvnw clean package"       <-   여기서는 프로젝트 내부에 둔 mvnw를 통해 clean & package를 수행합니다.
 
 # after_success : 테스트 성공 후 할일
+# --tag(또는 -t) 옵션은 새로 생성할 이미지 이름을 지정한다. 
+# "-t <생성할 이미지명>:<태그명> <Dockerfile 위치>"
+# 여기서는 리포지토리 이름으로  lhc8607git/restapi_deploy을 사용하고 태그로 1.0을 사용했다. 
+# 마지막에 점(.)은 Dockerfile의 위치를 경로를 지정한다.
 after_success:
+  - echo "$DOCKER_PWD"
+  - echo "$DOCKER_ID"
   - echo "after_success■■■■■■■■■■■Test success"
+
+
+#  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+#  - docker build -t lhc8607git/restapi_deploy:1.0 .
+#  - docker push lhc8607git/restapi_deploy:1.0
+
+
+
+
+
+
+
+
+
 
 # 3
 #script: "./mvnw clean package"
 
 # CI 실행 완료시 메일로 알람
+# Travis CI 실행 완료 시 자동으로 알람이 가도록 설정합니다.
 # 4
 #notifications:
 #  email:
