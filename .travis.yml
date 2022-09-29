@@ -56,7 +56,6 @@ after_success:
 
 
 
-
 # 3
 #script: "./mvnw clean package"
 
