@@ -42,20 +42,18 @@ script:
 
 # after_success : 테스트 성공 후 할일
 # --tag(또는 -t) 옵션은 새로 생성할 이미지 이름을 지정한다. 
-# "-t <생성할 이미지명>:<태그명> <Dockerfile 위치>"
+# "docker build -t <생성할 이미지명>:<태그명> <Dockerfile 위치>"
 # 여기서는 리포지토리 이름으로  lhc8607/restapi_deploy을 사용하고 태그로 1.0을 사용했다. 
 # 마지막에 점(.)은 Dockerfile의 위치를 경로를 지정한다.
 # (저장을 원하지 않을 경우 로그인시 -p대신 --password-stdin 옵션을 이용)
 after_success:
   - docker build -t lhc8607/restapi_deploy:1.0 .
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push lhc8607/restapi_deploy:1.0
   - echo "after_success■■■■■■■■■■■Test success"
 
 
-
 #  - docker login -u $DOCKER_ID -p $DOCKER_PWD --password-stdin
-#  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
-#  - docker push lhc8607/restapi_deploy:1.0
 
 
 
