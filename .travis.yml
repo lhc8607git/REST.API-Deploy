@@ -50,6 +50,7 @@ after_success:
   - docker login -u $DOCKER_ID -p $DOCKER_PWD
   - echo "after_success■■■■■■■■■■■Test success"
 
+
 #  - docker build -t lhc8607git/restapi_deploy:1.0 .
 
 #  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
