@@ -39,7 +39,6 @@ script:
 
 
 
-
 # after_success : 테스트 성공 후 할일
 # --tag(또는 -t) 옵션은 새로 생성할 이미지 이름을 지정한다. 
 # "docker build -t <생성할 이미지명>:<태그명> <Dockerfile 위치>"
@@ -52,17 +51,48 @@ after_success:
   - docker push lhc8607/restapi_deploy:1.0
   - echo "after_success■■■■■■■■■■■Test success"
 
-
 #  - docker login -u $DOCKER_ID -p $DOCKER_PWD --password-stdin
 
 
 
+# deploy 명령어가 실행되기 전 수행
+#before_deploy:
+#  - echo "Elastic Beanstalk 배포 전."
 
+
+
+# 배포
+# provider: 외부 서비스 표시
+# region: aws의 S3에 가면 해당 s3버킷이름의 리전을 작성해줍니다.
+# app: aws의 Elastic Beanstalk의 "애플리케이션 이름"
+# env: aws의 Elastic Beanstalk에서 app이 생성하고 나오는 "환경 이름"
+# bucket_name: S3버킷이름 *      ( elasticbeanstalk을 위한 s3버켓 이름 )
+# bucket_path: 어플리케이션 이름과 동일
+# access_key_id, secret_access_key : aws의 IAM을 통해 설정 하면 "액세스 키ID", "비밀 액세스 키" 값이 생김
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-deploy-app"
+  env: "Dockerdeployapp-env"
+  bucket_name: elasticbeanstalk-ap-northeast-2-805778698340
+  bucket_path: "docker-deploy-app"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+
+
+
+# deploy 명령어가 실행 후 수행
+#after_deploy:
+#  - echo "Elastic Beanstalk 배포 후."
 
 
 
 # 3
 #script: "./mvnw clean package"
+
+
 
 # CI 실행 완료시 메일로 알람
 # Travis CI 실행 완료 시 자동으로 알람이 가도록 설정합니다.
