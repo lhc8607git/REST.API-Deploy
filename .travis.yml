@@ -29,3 +29,12 @@ before_install:
 # (참고) https://eojin312.github.io/%EA%B0%9C%EC%9D%B8%EA%B3%B5%EB%B6%80/travis/
 # (참고) https://brainbackdoor.tistory.com/17
 
+
+
+# script : 테스트 실행할 스크립트
+script:
+  - ./mvnw test -B
+  - echo "scrip■■■■■■■■■■■sstart creating an image with dockerfile"
+#script: "./mvnw clean package"       <-   여기서는 프로젝트 내부에 둔 mvnw를 통해 clean & package를 수행합니다.
+
+
