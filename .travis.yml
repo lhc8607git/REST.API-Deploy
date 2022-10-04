@@ -39,6 +39,7 @@ script:
 
 
 
+
 # after_success : 테스트 성공 후 할일
 # --tag(또는 -t) 옵션은 새로 생성할 이미지 이름을 지정한다. 
 # "docker build -t <생성할 이미지명>:<태그명> <Dockerfile 위치>"
