@@ -73,13 +73,14 @@ deploy:
   provider: elasticbeanstalk
   region: "ap-northeast-2"
   app: "docker-deploy-app"
-  env: "Dockerdeployapp-env"
+  env: "Dockerdeployapp-env-1"
   bucket_name: elasticbeanstalk-ap-northeast-2-805778698340
   bucket_path: "docker-deploy-app"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
+  - echo "deploy■■■■■■■■■■■Test"
 
 
 
