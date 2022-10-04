@@ -59,3 +59,26 @@ after_success:
 # deploy 명령어가 실행되기 전 수행
 #before_deploy:
 #  - echo "Elastic Beanstalk 배포 전."
+
+
+
+# 배포
+# provider: 외부 서비스 표시
+# region: aws의 S3에 가면 해당 s3버킷이름의 리전을 작성해줍니다.
+# app: aws의 Elastic Beanstalk의 "애플리케이션 이름"
+# env: aws의 Elastic Beanstalk에서 app이 생성하고 나오는 "환경 이름"
+# bucket_name: S3버킷이름 *      ( elasticbeanstalk을 위한 s3버켓 이름 )
+# bucket_path: 어플리케이션 이름과 동일
+# access_key_id, secret_access_key : aws의 IAM을 통해 설정 하면 "액세스 키ID", "비밀 액세스 키" 값이 생김
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-deploy-app"
+  env: "Dockerdeployapp-env-1"
+  bucket_name: elasticbeanstalk-ap-northeast-2-805778698340
+  bucket_path: "docker-deploy-app"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  - echo "deploy■■■■■■■■■■■Test"
