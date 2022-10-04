@@ -72,10 +72,10 @@ after_success:
 # access_key_id, secret_access_key : aws의 IAM을 통해 설정 하면 "액세스 키ID", "비밀 액세스 키" 값이 생김
 deploy:
   provider: elasticbeanstalk
-  region: "us-east-1"
+  region: "ap-northeast-2"
   app: "docker-deploy-app"
-  env: "Dockerdeployapp-env-1"
-  bucket_name: elasticbeanstalk-us-east-1-805778698340
+  env: "Dockerdeployapp-env"
+  bucket_name: elasticbeanstalk-ap-northeast-2-805778698340
   bucket_path: "docker-deploy-app"
   on:
     branch: master
