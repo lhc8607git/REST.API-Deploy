@@ -75,7 +75,7 @@ deploy:
   region: "us-east-1"
   app: "docker-deploy-app"
   env: "Dockerdeployapp-env-1"
-  bucket_name: elasticbeanstalk-ap-northeast-2-805778698340
+  bucket_name: elasticbeanstalk-us-east-1-805778698340
   bucket_path: "docker-deploy-app"
   on:
     branch: master
