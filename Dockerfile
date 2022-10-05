@@ -9,7 +9,7 @@ FROM openjdk:8-jdk-alpine
 # (참고) https://joont92.github.io/docker/volume-container-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0/
 VOLUME /tmp
 
-EXPOSE 8088
+EXPOSE 80
 
 # ARG 명령어는 build 시에 사용되는 변수
 # 'target/*.jar 이라는 값을 가진 JAR_FILE 변수를 사용하겠다'라는 것
