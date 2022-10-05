@@ -82,3 +82,24 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
 
+
+
+# deploy 명령어가 실행 후 수행
+#after_deploy:
+#  - echo "Elastic Beanstalk 배포 후."
+  - echo "Elastic Beanstalk 배포 진행중입니다."
+
+
+
+# 3
+#script: "./mvnw clean package"
+
+
+
+# CI 실행 완료시 메일로 알람
+# Travis CI 실행 완료 시 자동으로 알람이 가도록 설정합니다.
+# 4
+#notifications:
+#  email:
+#    recipients:
+#      - akvs75@naver.com
