@@ -88,7 +88,7 @@ deploy:
 # deploy 명령어가 실행 후 수행
 #after_deploy:
 #  - echo "Elastic Beanstalk 배포 후."
-  - echo "Elastic Beanstalk 배포 진행중입니다."
+#  - echo "Elastic Beanstalk 배포 진행중입니다."
 
 
 
