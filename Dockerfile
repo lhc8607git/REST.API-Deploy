@@ -27,4 +27,5 @@ ADD ${JAR_FILE} app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 
+
 # (참고) https://velog.io/@skygl/Docker-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%EC%9D%98-Docker-%EC%97%B0%EB%8F%99%ED%95%98%EB%8A%94-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
