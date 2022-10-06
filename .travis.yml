@@ -21,6 +21,7 @@ branches:
 
 
 
+
 # before_install : 스크립트 실행할 수 있는 환경 구성
 before_install:
   - chmod +x mvnw
