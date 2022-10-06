@@ -1,5 +1,5 @@
 server:
-  port: 8088 # 포트 변경
+  port: 80 # 포트 변경
 
 logging:
   level:
