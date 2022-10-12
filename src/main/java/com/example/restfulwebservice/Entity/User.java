@@ -1,7 +1,5 @@
-package com.example.restfulwebservice.user;
+package com.example.restfulwebservice.Entity;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

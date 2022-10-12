@@ -1,4 +1,4 @@
-package com.example.restfulwebservice.helloworld;
+package com.example.restfulwebservice.testrest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

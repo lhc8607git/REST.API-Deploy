@@ -1,17 +1,17 @@
-package com.example.restfulwebservice.user;
+package com.example.restfulwebservice.controller;
 
 
+import com.example.restfulwebservice.Entity.User;
+import com.example.restfulwebservice.service.UserDaoService;
+import com.example.restfulwebservice.exception.UserNotFoundException;
+import com.example.restfulwebservice.Entity.UserV2;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import org.springframework.beans.BeanUtils;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.converter.json.MappingJacksonValue;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
-import java.net.URI;
 import java.util.List;
 
 @RestController

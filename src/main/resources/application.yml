@@ -6,6 +6,10 @@ logging:
     org.springframework: DEBUG
 
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
   jpa:
     show-sql: true
   h2:

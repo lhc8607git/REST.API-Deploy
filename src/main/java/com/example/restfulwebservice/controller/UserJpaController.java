@@ -1,6 +1,11 @@
-package com.example.restfulwebservice.user;
+package com.example.restfulwebservice.controller;
 
 
+import com.example.restfulwebservice.repository.PostRepository;
+import com.example.restfulwebservice.repository.UserRepository;
+import com.example.restfulwebservice.Entity.Post;
+import com.example.restfulwebservice.Entity.User;
+import com.example.restfulwebservice.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;

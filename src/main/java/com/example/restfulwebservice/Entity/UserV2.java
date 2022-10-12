@@ -1,13 +1,10 @@
-package com.example.restfulwebservice.user;
+package com.example.restfulwebservice.Entity;
 
+import com.example.restfulwebservice.Entity.User;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor

@@ -1,5 +1,6 @@
-package com.example.restfulwebservice.user;
+package com.example.restfulwebservice.service;
 
+import com.example.restfulwebservice.Entity.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
